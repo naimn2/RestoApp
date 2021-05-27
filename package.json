@@ -1,5 +1,5 @@
 {
-  "name": "restaurant-apps",
+  "name": "makan-yuk",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,7 +9,7 @@
     "test": "karma start"
   },
   "keywords": [],
-  "author": "your_name <your.email@domain.com>",
+  "author": "Muhammad Muflihun Naim",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.10.5",
