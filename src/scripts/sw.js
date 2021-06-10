@@ -1,4 +1,5 @@
-import cacheHelper from "./utils/cache-helper";
+/* eslint-disable no-restricted-globals */
+import cacheHelper from './utils/cache-helper';
 
 const { assets } = global.serviceWorkerOption;
 
@@ -16,7 +17,7 @@ self.addEventListener('activate', (event) => {
 
 self.addEventListener('fetch', (event) => {
     console.log(event.request);
-    
+
     if (!(event.request.url.indexOf('http') === 0)) return;
 
     event.respondWith(cacheHelper.revalidateCache(event.request));

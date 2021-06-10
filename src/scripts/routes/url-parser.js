@@ -1,7 +1,7 @@
 const urlParser = {
   parseActiveUrlWithCombiner() {
     const url = window.location.hash.slice(1).toLowerCase();
-    console.log("URL = ", url);
+    console.log('URL = ', url);
     const splitedUrl = this._urlSplitter(url);
     return this._urlCombiner(splitedUrl);
   },
@@ -26,7 +26,7 @@ const urlParser = {
     const combinedUrl = (splitedUrl.resource ? `/${splitedUrl.resource}` : '/')
       + (splitedUrl.id ? '/:id' : '')
       + (splitedUrl.verb ? `/${splitedUrl.verb}` : '');
-    console.log('Combined URL = ', combinedUrl); 
+    console.log('Combined URL = ', combinedUrl);
     return combinedUrl;
   },
 };

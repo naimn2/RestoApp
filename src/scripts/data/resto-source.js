@@ -1,4 +1,4 @@
-import restoData from "../../DATA.json";
+import restoData from '../../DATA.json';
 
 class RestoSource {
     static async featured() {

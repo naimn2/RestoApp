@@ -7,7 +7,7 @@ import swRegister from './utils/sw-register';
 const app = new App({
     button: document.querySelector('#nav-toggle'),
     drawer: document.querySelector('#nav'),
-    content: document.querySelector('#maincontent')
+    content: document.querySelector('#maincontent'),
 });
 
 window.addEventListener('hashchange', () => {

@@ -38,7 +38,7 @@ module.exports = {
       ],
     }),
     new SWorkerWebpackPlugin({
-      entry: path.resolve(__dirname, 'src/scripts/sw.js')
+      entry: path.resolve(__dirname, 'src/scripts/sw.js'),
     }),
   ],
 };

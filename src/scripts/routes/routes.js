@@ -1,8 +1,8 @@
-import featured from "../views/pages/featured";
+import featured from '../views/pages/featured';
 
 const routes = {
     '/': featured,
-    '/featured': featured
-}
+    '/featured': featured,
+};
 
 export default routes;
