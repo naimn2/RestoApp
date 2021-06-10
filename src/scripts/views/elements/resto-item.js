@@ -6,8 +6,8 @@ class RestoItem extends HTMLElement {
     }
 
     render() {
-        const container = document.createElement("div");
-        container.className = "resto-container";
+        const container = document.createElement('div');
+        container.className = 'resto-container';
         
         container.innerHTML = `
         <img class="resto-img" src="${this._resto.pictureId}" alt="Gambar restoran ${this._resto.name}">
@@ -21,4 +21,4 @@ class RestoItem extends HTMLElement {
     }
 }
 
-customElements.define("resto-item", RestoItem);
+customElements.define('resto-item', RestoItem);

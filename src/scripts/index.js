@@ -1,41 +1,18 @@
 import 'regenerator-runtime'; /* for async await transpile */
 import '../styles/main.css';
-import "./resto-list.js";
-import restoData from "../DATA.json";
+import './views/elements/resto-list';
+import App from './views/app';
 
-console.log("Resto:", restoData);
-
-const navToggleElement = document.querySelector("#nav-toggle");
-const navElement = document.querySelector("#nav");
-const mainElement = document.querySelector("main");
-const jumbotronElement = document.querySelector(".jumbotron");
-
-const openDrawer = event => {
-    navElement.classList.toggle("open");
-    event.stopPropagation();
-}
-
-const closeDrawer = event => {
-    navElement.classList.remove("open");
-    event.stopPropagation();
-}
-
-navToggleElement.addEventListener("click", event => {
-    openDrawer(event);
+const app = new App({
+    button: document.querySelector('#nav-toggle'),
+    drawer: document.querySelector('#nav'),
+    content: document.querySelector('#maincontent')
 });
 
-mainElement.addEventListener("click", event => {
-    closeDrawer(event);
+window.addEventListener('hashchange', () => {
+    app.renderPage();
 });
 
-jumbotronElement.addEventListener("click", event => {
-    closeDrawer(event);
+window.addEventListener('load', () => {
+    app.renderPage();
 });
-
-const showRestoData = () => {
-    console.log("show resto data.");
-    const restoList = document.querySelector("resto-list");
-    restoList.restoList = restoData.restaurants; 
-}
-
-showRestoData();

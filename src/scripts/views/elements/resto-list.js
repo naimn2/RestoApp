@@ -1,4 +1,4 @@
-import "./resto-item.js"
+import './resto-item.js';
 
 class RestoList extends HTMLElement {
     set restoList(restoList) {
@@ -8,8 +8,8 @@ class RestoList extends HTMLElement {
     }
 
     render() {
-        const container = document.createElement("div");
-        container.className = "list-container";
+        const container = document.createElement('div');
+        container.className = 'list-container';
 
         for (let resto of this._restoList) {
             const restoItem = document.createElement("resto-item");
@@ -21,4 +21,4 @@ class RestoList extends HTMLElement {
     }
 }
 
-customElements.define("resto-list", RestoList);
+customElements.define('resto-list', RestoList);
