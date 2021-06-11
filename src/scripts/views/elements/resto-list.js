@@ -5,10 +5,10 @@ class RestoList extends HTMLElement {
     set restoList(restoList) {
         this._restoList = restoList;
         console.log('set resto list: ');
-        this.render();
+        this._render();
     }
 
-    render() {
+    _render() {
         const container = document.createElement('div');
         container.className = 'list-container';
 

@@ -16,6 +16,14 @@ body {
     font-family: sans-serif;
 }
 
+.detail-img {
+    max-width: 800px;
+}
+
+.center {
+    margin: 0 auto;
+}
+
 .footer-content {
     background: rgb(255, 65, 65);
     padding: 30px;
@@ -133,8 +141,17 @@ nav {
     color: rgb(110, 110, 110);
 }
 
+.resto-detail {
+    margin: 0 auto;
+    max-width: 1120px;
+}
+
 .resto-name {
     font-size: 20px;
+}
+
+.resto-name-l {
+    font-size: 48px;
 }
 
 .skip-link {
@@ -171,6 +188,15 @@ nav {
     main {
         padding: 20px 20px 0 20px;
     }
+
+    /* detail img */
+    .detail-img {
+        width: 80%;
+        height: auto;
+    }
+    .resto-name-l {
+        font-size: 32px;
+    }
 }
 
 /* tampilan seluler */
@@ -186,6 +212,15 @@ nav {
     }
     main {
         padding: 20px 20px 0 20px;
+    }
+
+    /* detail img */
+    .detail-img {
+        width: 100%;
+        height: auto;
+    }
+    .resto-name-l {
+        font-size: 24px;
     }
 }
 
@@ -235,3 +270,5 @@ nav {
         background-size: 100% auto;
     }
 }
+
+/* image detail responsive */

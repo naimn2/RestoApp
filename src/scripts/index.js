@@ -1,6 +1,5 @@
 import 'regenerator-runtime'; /* for async await transpile */
 import '../styles/main.css';
-import './views/elements/resto-list';
 import App from './views/app';
 import swRegister from './utils/sw-register';
 
