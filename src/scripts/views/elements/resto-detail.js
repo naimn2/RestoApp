@@ -41,10 +41,13 @@ class RestoDetail extends HTMLElement {
         this.innerHTML = `
         <div class="resto-detail">
             <img class="detail-img center" src="${CONFIG.BASE_IMAGE_URL}/medium/${this._resto.pictureId}" alt="Gambar restoran ${this._resto.name}">
+            <button aria-label="like this restaurant" id="like-button" class="like">
+                <i id="like-inner" class="fa fa-heart-o" aria-hidden="true"></i>
+            </button>
             <h2 class="resto-name-l">${this._resto.name}</h2>
-            <p class="resto-deskripsi">Rating: ${this._resto.rating}</p>
             <p class="resto-deskripsi">Categories: ${categories}</p>
             <p class="resto-deskripsi">Lokasi: ${this._resto.address}, Kota ${this._resto.city}.</p>
+            <p class="resto-deskripsi">Rating: ${this._resto.rating}</p>
             <div class="splitter"></div>
             <h3>Description</h3>
             <p class="resto-deskripsi">${this._resto.description}</p>
@@ -58,6 +61,18 @@ class RestoDetail extends HTMLElement {
 
         const customerReviewList = this.querySelector('customer-review-list');
         customerReviewList.reviewList = this._resto.customerReviews;
+    }
+
+    renderUnlikeButton() {
+        const likeInner = this.querySelector('#like-inner');
+        likeInner.classList.remove('fa-heart');
+        likeInner.classList.add('fa-heart-o');
+    }
+
+    renderLikeButton() {
+        const likeInner = this.querySelector('#like-inner');
+        likeInner.classList.remove('fa-heart-o');
+        likeInner.classList.add('fa-heart');
     }
 }
 
