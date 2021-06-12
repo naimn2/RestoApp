@@ -1,17 +1,17 @@
-import '../elements/resto-list';
-import RestoSource from '../../data/resto-source';
+import FavoriteIdb from '../../data/favorite-idb';
 
-const featured = {
+const favoriteResto = {
     async generateElement() {
         return `
             <resto-list>
             </resto-list>
         `;
     },
+
     async render() {
         const restoList = document.querySelector('resto-list');
-        const restoData = await RestoSource.featured();
-        restoList.restoList = restoData.restaurants;
+        const restos = await FavoriteIdb.getAll();
+        restoList.restoList = restos;
 
         const restoItems = document.querySelectorAll('.resto-container');
         restoItems.forEach((restoItem) => {
@@ -24,4 +24,4 @@ const featured = {
     },
 };
 
-export default featured;
+export default favoriteResto;

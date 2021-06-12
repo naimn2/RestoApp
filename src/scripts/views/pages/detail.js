@@ -4,13 +4,13 @@ import likeButtonInitiator from '../../utils/like-button-initiator';
 import '../elements/resto-detail';
 
 const detail = {
-    async render() {
+    async generateElement() {
         return `
             <resto-detail></resto-detail>
         `;
     },
 
-    async afterRender() {
+    async render() {
         const url = urlParser.parseActiveUrlWithoutCombiner();
         const restoDetail = document.querySelector('resto-detail');
         const restoData = await RestoSource.detailResto(url.id);
