@@ -1,4 +1,4 @@
-import CONFIG from "../../globals/config";
+import CONFIG from '../../globals/config';
 
 class RestoItem extends HTMLElement {
     set resto(resto) {

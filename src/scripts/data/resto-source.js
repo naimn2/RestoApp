@@ -1,4 +1,3 @@
-import restoData from '../../DATA.json';
 import CONFIG from '../globals/config';
 
 class RestoSource {
