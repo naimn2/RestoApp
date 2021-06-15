@@ -171,6 +171,8 @@ nav {
     line-height: 1.6em;
     max-height: 6.4em;
     word-wrap: break-word;
+    margin-top: 0;
+    margin-bottom: 8px;
     overflow: hidden;
     color: rgb(110, 110, 110);
 }
@@ -182,6 +184,10 @@ nav {
 
 .resto-name {
     font-size: 20px;
+    margin: 0;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
 }
 
 .resto-name-l {
