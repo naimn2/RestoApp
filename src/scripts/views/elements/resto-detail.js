@@ -7,36 +7,49 @@ class RestoDetail extends HTMLElement {
         this._render();
     }
 
+    get resto() {
+        return this._resto;
+    }
+
     _render() {
         let categories = '';
-        this._resto.categories.forEach((category, i) => {
-            categories += category.name;
-            if (i < this._resto.categories.length - 1) {
-                categories += ', ';
-            } else {
-                categories += '.';
-            }
-        });
+        if (this._resto.categories) {
+            this._resto.categories.forEach((category, i) => {
+                categories += category.name;
+                if (i < this._resto.categories.length - 1) {
+                    categories += ', ';
+                } else {
+                    categories += '.';
+                }
+            });
+        }
 
         let foods = '';
-        this._resto.menus.foods.forEach((food, i) => {
-            foods += food.name;
-            if (i < this._resto.menus.foods.length - 1) {
-                foods += ', ';
-            } else {
-                foods += '.';
-            }
-        });
-
         let drinks = '';
-        this._resto.menus.drinks.forEach((drink, i) => {
-            drinks += drink.name;
-            if (i < this._resto.menus.drinks.length - 1) {
-                drinks += ', ';
-            } else {
-                drinks += '.';
+
+        if (this._resto.menus) {
+            if (this._resto.menus.foods) {
+                this._resto.menus.foods.forEach((food, i) => {
+                    foods += food.name;
+                    if (i < this._resto.menus.foods.length - 1) {
+                        foods += ', ';
+                    } else {
+                        foods += '.';
+                    }
+                });
             }
-        });
+
+            if (this._resto.menus.drinks) {
+                this._resto.menus.drinks.forEach((drink, i) => {
+                    drinks += drink.name;
+                    if (i < this._resto.menus.drinks.length - 1) {
+                        drinks += ', ';
+                    } else {
+                        drinks += '.';
+                    }
+                });
+            }
+        }
 
         this.innerHTML = `
         <div class="resto-detail">
@@ -59,20 +72,26 @@ class RestoDetail extends HTMLElement {
         </div>
         `;
 
-        const customerReviewList = this.querySelector('customer-review-list');
-        customerReviewList.reviewList = this._resto.customerReviews;
+        if (this._resto.customerReviews) {
+            const customerReviewList = this.querySelector('customer-review-list');
+            customerReviewList.reviewList = this._resto.customerReviews;
+        }
     }
 
-    renderUnlikeButton() {
+    renderLikeButton() {
         const likeInner = this.querySelector('#like-inner');
         likeInner.classList.remove('fa-heart');
         likeInner.classList.add('fa-heart-o');
     }
 
-    renderLikeButton() {
+    renderUnlikeButton() {
         const likeInner = this.querySelector('#like-inner');
         likeInner.classList.remove('fa-heart-o');
         likeInner.classList.add('fa-heart');
+    }
+
+    get likeButton() {
+        return this.querySelector('#like-button');
     }
 }
 

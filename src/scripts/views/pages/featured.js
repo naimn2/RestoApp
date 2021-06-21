@@ -17,7 +17,6 @@ const featured = {
         restoItems.forEach((restoItem) => {
             restoItem.addEventListener('click', (event) => {
                 const restoId = event.path[1].id;
-                console.log('On Click:', restoId);
                 window.location.href = `#/detail/${restoId}`;
             });
         });

@@ -1,6 +1,6 @@
 import RestoSource from '../../data/resto-source';
 import urlParser from '../../routes/url-parser';
-import likeButtonInitiator from '../../utils/like-button-initiator';
+import likeButtonPresenter from '../../utils/like-button-presenter';
 import '../elements/resto-detail';
 
 const detail = {
@@ -17,12 +17,7 @@ const detail = {
         console.log('restoData', restoData);
         restoDetail.resto = restoData.restaurant;
 
-        const buttonLike = document.querySelector('#like-button');
-        await likeButtonInitiator.init({
-            resto: restoData.restaurant,
-            likeButton: buttonLike,
-            restoDetail,
-        });
+        await likeButtonPresenter.init(restoDetail);
     },
 };
 
