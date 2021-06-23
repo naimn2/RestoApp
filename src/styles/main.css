@@ -5,6 +5,10 @@ a {
     align-items: center;
 }
 
+.align-center {
+    text-align: center;
+}
+
 button {
     min-width: 44px;
     min-height: 44px;
@@ -150,6 +154,10 @@ nav {
     color: white;
     padding: 0;
     border: none;
+}
+
+#no-data {
+    color: gray;
 }
 
 .review-item {
