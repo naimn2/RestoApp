@@ -12,7 +12,7 @@ class RestoItem extends HTMLElement {
         container.id = this._resto.id;
 
         container.innerHTML = `
-        <img class="resto-img" src="${CONFIG.BASE_IMAGE_URL}/small/${this._resto.pictureId}" alt="Gambar restoran ${this._resto.name}">
+        <img class="resto-img lazyload" data-src="${CONFIG.BASE_IMAGE_URL}/small/${this._resto.pictureId}" alt="Gambar restoran ${this._resto.name}">
         <a class="resto-name" href="#/detail/${this._resto.id}">${this._resto.name}</a>
         <p class="resto-deskripsi">${this._resto.description}</p>
         <p class="resto-deskripsi">Rating: ${this._resto.rating}</p>
