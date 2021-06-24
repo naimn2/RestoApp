@@ -53,7 +53,8 @@ class RestoDetail extends HTMLElement {
 
         this.innerHTML = `
         <div class="resto-detail">
-            <img class="detail-img center lazyload" data-src="${CONFIG.BASE_IMAGE_URL}/medium/${this._resto.pictureId}" alt="Gambar restoran ${this._resto.name}">
+            <img class="detail-img center lazyload" data-src="${CONFIG.BASE_IMAGE_URL}/medium/${this._resto.pictureId}" 
+                src="images/restaurant_cover-placeholder-large.jpg"  alt="Gambar restoran ${this._resto.name}">
             <button aria-label="like this restaurant" id="like-button" class="like">
                 <i id="like-inner" class="fa fa-heart-o" aria-hidden="true"></i>
             </button>
